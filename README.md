@@ -1,1 +1,0 @@
-# EcoLombada-back-end
