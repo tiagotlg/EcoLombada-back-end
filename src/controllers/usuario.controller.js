@@ -5,6 +5,7 @@ import {
   adicionarNovoUsuario,
   atualizarUsuario,
   excluirUsuarioStatus,
+  buscarUsuarioPorEmail
 } from "../repositories/usuario.repository.js";
 import { StatusUsuario, tipoUsuario } from "../utils/enums/index.js";
 
@@ -29,7 +30,7 @@ export const obterUsuarioPorId = async (req, res) => {
 };
 
 export const adicionarUsuario = async (req, res) => {
-  const id_usuario = uuidv4();
+  const id = uuidv4();
   const {
     nome,
     email,
@@ -78,7 +79,7 @@ export const adicionarUsuario = async (req, res) => {
 
   // Novo usuário
   const novoUsuario = {
-    id_usuario,
+    id,
     nome,
     email,
     senha,
